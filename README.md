@@ -39,13 +39,9 @@ skills/jin10
 
 ## Install This Skill
 
-### Option 1: Copy into `~/.hermes/skills/`
+### Prerequisite: Create Your Jin10 Token File
 
 ```bash
-git clone https://github.com/robinspt/hermes-skills.git
-cd hermes-skills
-mkdir -p ~/.hermes/skills
-cp -r skills/jin10 ~/.hermes/skills/
 mkdir -p ~/.config/jin10
 chmod 700 ~/.config/jin10
 nano ~/.config/jin10/api_token
@@ -56,10 +52,13 @@ Paste your Jin10 token into that file as the only content, save, and exit `nano`
 
 Get your Jin10 token from: `https://mcp.jin10.com/app`
 
-Then start a new Hermes session, or restart the gateway if you use Discord/Telegram:
+### Option 1: Copy into `~/.hermes/skills/`
 
 ```bash
-hermes gateway restart
+git clone https://github.com/robinspt/hermes-skills.git
+cd hermes-skills
+mkdir -p ~/.hermes/skills
+cp -r skills/jin10 ~/.hermes/skills/
 ```
 
 ### Option 2: Add This Repository as a Custom Tap
@@ -71,6 +70,12 @@ hermes skills tap add robinspt/hermes-skills
 hermes skills inspect robinspt/hermes-skills/jin10
 hermes skills install robinspt/hermes-skills/jin10
 hermes skills list
+```
+
+After either install method, start a new Hermes session, or restart the gateway if you use Discord/Telegram:
+
+```bash
+hermes gateway restart
 ```
 
 ## Usage
@@ -152,13 +157,9 @@ skills/jin10
 
 ## 安装方法
 
-### 方式一：复制到 `~/.hermes/skills/`
+### 前置条件：创建 Jin10 token 文件
 
 ```bash
-git clone https://github.com/robinspt/hermes-skills.git
-cd hermes-skills
-mkdir -p ~/.hermes/skills
-cp -r skills/jin10 ~/.hermes/skills/
 mkdir -p ~/.config/jin10
 chmod 700 ~/.config/jin10
 nano ~/.config/jin10/api_token
@@ -169,10 +170,13 @@ chmod 600 ~/.config/jin10/api_token
 
 Jin10 token 获取地址：`https://mcp.jin10.com/app`
 
-如果你使用 Discord、Telegram 等消息平台，安装或更新后建议执行：
+### 方式一：复制到 `~/.hermes/skills/`
 
 ```bash
-hermes gateway restart
+git clone https://github.com/robinspt/hermes-skills.git
+cd hermes-skills
+mkdir -p ~/.hermes/skills
+cp -r skills/jin10 ~/.hermes/skills/
 ```
 
 ### 方式二：把仓库添加为自定义 Tap
@@ -184,6 +188,12 @@ hermes skills tap add robinspt/hermes-skills
 hermes skills inspect robinspt/hermes-skills/jin10
 hermes skills install robinspt/hermes-skills/jin10
 hermes skills list
+```
+
+如果你使用 Discord、Telegram 等消息平台，任一安装方式完成后都建议执行：
+
+```bash
+hermes gateway restart
 ```
 
 ## 使用方式

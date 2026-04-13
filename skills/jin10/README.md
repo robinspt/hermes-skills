@@ -27,6 +27,17 @@ This is a packaging and usage adaptation for Hermes Agent. It is not an official
 
 ## Installation
 
+### Prerequisite: Create Your Jin10 Token File
+
+```bash
+mkdir -p ~/.config/jin10
+chmod 700 ~/.config/jin10
+nano ~/.config/jin10/api_token
+chmod 600 ~/.config/jin10/api_token
+```
+
+Paste your Jin10 token into that file as the only content, save, and exit `nano`.
+
 ### Option 1: Manual Copy
 
 From a fresh clone:
@@ -36,13 +47,7 @@ git clone https://github.com/robinspt/hermes-skills.git
 cd hermes-skills
 mkdir -p ~/.hermes/skills
 cp -r skills/jin10 ~/.hermes/skills/
-mkdir -p ~/.config/jin10
-chmod 700 ~/.config/jin10
-nano ~/.config/jin10/api_token
-chmod 600 ~/.config/jin10/api_token
 ```
-
-Paste your Jin10 token into that file as the only content, save, and exit `nano`.
 
 ### Option 2: Install via Custom Tap
 
@@ -55,7 +60,7 @@ hermes skills install robinspt/hermes-skills/jin10
 hermes skills list
 ```
 
-If you use Hermes messaging platforms such as Discord, restart the gateway after installing or updating the skill:
+If you use Hermes messaging platforms such as Discord, restart the gateway after either install method:
 
 ```bash
 hermes gateway restart
@@ -170,6 +175,17 @@ jin10/
 
 ## 安装方法
 
+### 前置条件：创建 Jin10 token 文件
+
+```bash
+mkdir -p ~/.config/jin10
+chmod 700 ~/.config/jin10
+nano ~/.config/jin10/api_token
+chmod 600 ~/.config/jin10/api_token
+```
+
+把 Jin10 token 粘贴到这个文件里，确保文件中只有 token 本身，保存并退出 `nano`。
+
 ### 方式一：手动复制
 
 从全新克隆开始：
@@ -179,13 +195,7 @@ git clone https://github.com/robinspt/hermes-skills.git
 cd hermes-skills
 mkdir -p ~/.hermes/skills
 cp -r skills/jin10 ~/.hermes/skills/
-mkdir -p ~/.config/jin10
-chmod 700 ~/.config/jin10
-nano ~/.config/jin10/api_token
-chmod 600 ~/.config/jin10/api_token
 ```
-
-把 Jin10 token 粘贴到这个文件里，确保文件中只有 token 本身，保存并退出 `nano`。
 
 ### 方式二：通过自定义 Tap 安装
 
@@ -198,7 +208,7 @@ hermes skills install robinspt/hermes-skills/jin10
 hermes skills list
 ```
 
-如果你要在 Discord 等消息平台使用，安装或更新后建议重启 gateway：
+如果你要在 Discord 等消息平台使用，任一安装方式完成后都建议重启 gateway：
 
 ```bash
 hermes gateway restart
