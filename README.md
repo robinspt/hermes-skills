@@ -40,8 +40,8 @@ skills/jin10
 ### Option 1: Copy into `~/.hermes/skills/`
 
 ```bash
-mkdir -p ~/.hermes/skills/finance
-cp -r skills/jin10 ~/.hermes/skills/finance/
+mkdir -p ~/.hermes/skills
+cp -r skills/jin10 ~/.hermes/skills/
 mkdir -p ~/.config/jin10
 chmod 700 ~/.config/jin10
 nano ~/.config/jin10/api_token
@@ -152,8 +152,8 @@ skills/jin10
 ### 方式一：复制到 `~/.hermes/skills/`
 
 ```bash
-mkdir -p ~/.hermes/skills/finance
-cp -r skills/jin10 ~/.hermes/skills/finance/
+mkdir -p ~/.hermes/skills
+cp -r skills/jin10 ~/.hermes/skills/
 mkdir -p ~/.config/jin10
 chmod 700 ~/.config/jin10
 nano ~/.config/jin10/api_token

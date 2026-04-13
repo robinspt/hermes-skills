@@ -17,7 +17,7 @@ metadata:
 
 Use this skill to access Jin10 market data through the bundled Python CLI.
 
-Assume the skill is installed at `~/.hermes/skills/finance/jin10`. If the user installs it through `skills.external_dirs`, keep the same relative layout and substitute the actual root path.
+Assume the skill is installed at `~/.hermes/skills/jin10`. If the user installs it through `skills.external_dirs`, keep the same relative layout and substitute the actual root path.
 
 Before use, make sure a local Jin10 token file exists at `~/.config/jin10/api_token`. The file should contain only the token string.
 
@@ -32,12 +32,12 @@ Before use, make sure a local Jin10 token file exists at `~/.config/jin10/api_to
 ## Quick Reference
 
 ```bash
-python3 ~/.hermes/skills/finance/jin10/scripts/jin10.py --format json codes
-python3 ~/.hermes/skills/finance/jin10/scripts/jin10.py --format json quote XAUUSD
-python3 ~/.hermes/skills/finance/jin10/scripts/jin10.py --format json flash search "美联储"
-python3 ~/.hermes/skills/finance/jin10/scripts/jin10.py --format json news search "原油"
-python3 ~/.hermes/skills/finance/jin10/scripts/jin10.py --format json news get 123456
-python3 ~/.hermes/skills/finance/jin10/scripts/jin10.py --format json calendar --high-importance
+python3 ~/.hermes/skills/jin10/scripts/jin10.py --format json codes
+python3 ~/.hermes/skills/jin10/scripts/jin10.py --format json quote XAUUSD
+python3 ~/.hermes/skills/jin10/scripts/jin10.py --format json flash search "美联储"
+python3 ~/.hermes/skills/jin10/scripts/jin10.py --format json news search "原油"
+python3 ~/.hermes/skills/jin10/scripts/jin10.py --format json news get 123456
+python3 ~/.hermes/skills/jin10/scripts/jin10.py --format json calendar --high-importance
 ```
 
 Read [references/api-contract.md](references/api-contract.md) when you need the field contract or selection rules.

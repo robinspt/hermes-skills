@@ -28,8 +28,8 @@ This is a packaging and usage adaptation for Hermes Agent. It is not an official
 From the repository root, copy this skill into your Hermes skills directory:
 
 ```bash
-mkdir -p ~/.hermes/skills/finance
-cp -r skills/jin10 ~/.hermes/skills/finance/
+mkdir -p ~/.hermes/skills
+cp -r skills/jin10 ~/.hermes/skills/
 mkdir -p ~/.config/jin10
 chmod 700 ~/.config/jin10
 nano ~/.config/jin10/api_token
@@ -85,7 +85,7 @@ to confirm that Hermes has loaded the skill on the messaging side. If needed, ch
 The skill uses the bundled script:
 
 ```bash
-python3 ~/.hermes/skills/finance/jin10/scripts/jin10.py --format json ...
+python3 ~/.hermes/skills/jin10/scripts/jin10.py --format json ...
 ```
 
 Supported commands:
@@ -156,8 +156,8 @@ jin10/
 在仓库根目录执行下面的命令，把这个 skill 复制到 Hermes 的 skills 目录：
 
 ```bash
-mkdir -p ~/.hermes/skills/finance
-cp -r skills/jin10 ~/.hermes/skills/finance/
+mkdir -p ~/.hermes/skills
+cp -r skills/jin10 ~/.hermes/skills/
 mkdir -p ~/.config/jin10
 chmod 700 ~/.config/jin10
 nano ~/.config/jin10/api_token
@@ -213,7 +213,7 @@ hermes chat --toolsets skills,terminal -q "/jin10 看看最新的金价"
 底层调用的是这个脚本：
 
 ```bash
-python3 ~/.hermes/skills/finance/jin10/scripts/jin10.py --format json ...
+python3 ~/.hermes/skills/jin10/scripts/jin10.py --format json ...
 ```
 
 支持的命令包括：

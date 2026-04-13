@@ -2,7 +2,7 @@
 
 This Hermes skill uses the Jin10 MCP endpoint internally: `https://mcp.jin10.com/mcp`.
 
-Use the bundled script at `~/.hermes/skills/finance/jin10/scripts/jin10.py`.
+Use the bundled script at `~/.hermes/skills/jin10/scripts/jin10.py`.
 
 If the skill is loaded from `skills.external_dirs`, substitute the actual skill root but keep the same relative layout.
 
@@ -11,9 +11,9 @@ If the skill is loaded from `skills.external_dirs`, substitute the actual skill 
 ### Quotes
 
 ```bash
-python3 ~/.hermes/skills/finance/jin10/scripts/jin10.py --format json codes
-python3 ~/.hermes/skills/finance/jin10/scripts/jin10.py --format json quote XAUUSD
-python3 ~/.hermes/skills/finance/jin10/scripts/jin10.py --format text quote XAUUSD
+python3 ~/.hermes/skills/jin10/scripts/jin10.py --format json codes
+python3 ~/.hermes/skills/jin10/scripts/jin10.py --format json quote XAUUSD
+python3 ~/.hermes/skills/jin10/scripts/jin10.py --format text quote XAUUSD
 ```
 
 Common symbols:
@@ -29,28 +29,28 @@ Common symbols:
 ### Flash
 
 ```bash
-python3 ~/.hermes/skills/finance/jin10/scripts/jin10.py --format json flash list
-python3 ~/.hermes/skills/finance/jin10/scripts/jin10.py --format json flash list --cursor "<next_cursor>"
-python3 ~/.hermes/skills/finance/jin10/scripts/jin10.py --format json flash search "美联储"
+python3 ~/.hermes/skills/jin10/scripts/jin10.py --format json flash list
+python3 ~/.hermes/skills/jin10/scripts/jin10.py --format json flash list --cursor "<next_cursor>"
+python3 ~/.hermes/skills/jin10/scripts/jin10.py --format json flash search "美联储"
 ```
 
 ### News
 
 ```bash
-python3 ~/.hermes/skills/finance/jin10/scripts/jin10.py --format json news list
-python3 ~/.hermes/skills/finance/jin10/scripts/jin10.py --format json news list --cursor "<next_cursor>"
-python3 ~/.hermes/skills/finance/jin10/scripts/jin10.py --format json news search "原油"
-python3 ~/.hermes/skills/finance/jin10/scripts/jin10.py --format json news search "非农" --cursor "<next_cursor>"
-python3 ~/.hermes/skills/finance/jin10/scripts/jin10.py --format json news get 123456
+python3 ~/.hermes/skills/jin10/scripts/jin10.py --format json news list
+python3 ~/.hermes/skills/jin10/scripts/jin10.py --format json news list --cursor "<next_cursor>"
+python3 ~/.hermes/skills/jin10/scripts/jin10.py --format json news search "原油"
+python3 ~/.hermes/skills/jin10/scripts/jin10.py --format json news search "非农" --cursor "<next_cursor>"
+python3 ~/.hermes/skills/jin10/scripts/jin10.py --format json news get 123456
 ```
 
 ### Calendar
 
 ```bash
-python3 ~/.hermes/skills/finance/jin10/scripts/jin10.py --format json calendar
-python3 ~/.hermes/skills/finance/jin10/scripts/jin10.py --format json calendar --keyword "非农"
-python3 ~/.hermes/skills/finance/jin10/scripts/jin10.py --format json calendar --high-importance
-python3 ~/.hermes/skills/finance/jin10/scripts/jin10.py --format text calendar --high-importance
+python3 ~/.hermes/skills/jin10/scripts/jin10.py --format json calendar
+python3 ~/.hermes/skills/jin10/scripts/jin10.py --format json calendar --keyword "非农"
+python3 ~/.hermes/skills/jin10/scripts/jin10.py --format json calendar --high-importance
+python3 ~/.hermes/skills/jin10/scripts/jin10.py --format text calendar --high-importance
 ```
 
 ## Output Contract
