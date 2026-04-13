@@ -15,7 +15,9 @@ It is designed for:
 
 This is a packaging and usage adaptation for Hermes Agent. It is not an official Jin10 product.
 
-> Acknowledgment: Thanks to Jin10 for providing the MCP service. This skill only adapts the usage format and does not intend to replace or imitate Jin10's official service.
+> Acknowledgment: Thanks to Jin10 for providing the MCP service. This skill only adapts the usage format and does not intend to replace or imitate the [official Jin10 service](https://mcp.jin10.com/app).
+>
+> Token and service page: `https://mcp.jin10.com/app`
 
 ## Requirements
 
@@ -25,9 +27,13 @@ This is a packaging and usage adaptation for Hermes Agent. It is not an official
 
 ## Installation
 
-From the repository root, copy this skill into your Hermes skills directory:
+### Option 1: Manual Copy
+
+From a fresh clone:
 
 ```bash
+git clone https://github.com/robinspt/hermes-skills.git
+cd hermes-skills
 mkdir -p ~/.hermes/skills
 cp -r skills/jin10 ~/.hermes/skills/
 mkdir -p ~/.config/jin10
@@ -38,7 +44,16 @@ chmod 600 ~/.config/jin10/api_token
 
 Paste your Jin10 token into that file as the only content, save, and exit `nano`.
 
-Get your Jin10 token from: `https://mcp.jin10.com/app`
+### Option 2: Install via Custom Tap
+
+```bash
+git clone https://github.com/robinspt/hermes-skills.git
+cd hermes-skills
+hermes skills tap add robinspt/hermes-skills
+hermes skills inspect robinspt/hermes-skills/jin10
+hermes skills install robinspt/hermes-skills/jin10
+hermes skills list
+```
 
 If you use Hermes messaging platforms such as Discord, restart the gateway after installing or updating the skill:
 
@@ -143,7 +158,9 @@ jin10/
 
 这是面向 Hermes Agent 的封装与使用方式转换，不是 Jin10 官方产品。
 
-> 致谢：感谢金十数据提供 MCP 服务。本 skill 仅进行使用方式转换，无意替代或模仿金十数据官方服务。
+> 致谢：感谢金十数据提供 MCP 服务。本 skill 仅进行使用方式转换，无意替代或模仿[金十数据官方服务](https://mcp.jin10.com/app)。
+>
+> 获取地址：`https://mcp.jin10.com/app`
 
 ## 依赖条件
 
@@ -153,9 +170,13 @@ jin10/
 
 ## 安装方法
 
-在仓库根目录执行下面的命令，把这个 skill 复制到 Hermes 的 skills 目录：
+### 方式一：手动复制
+
+从全新克隆开始：
 
 ```bash
+git clone https://github.com/robinspt/hermes-skills.git
+cd hermes-skills
 mkdir -p ~/.hermes/skills
 cp -r skills/jin10 ~/.hermes/skills/
 mkdir -p ~/.config/jin10
@@ -166,7 +187,16 @@ chmod 600 ~/.config/jin10/api_token
 
 把 Jin10 token 粘贴到这个文件里，确保文件中只有 token 本身，保存并退出 `nano`。
 
-Jin10 token 获取地址：`https://mcp.jin10.com/app`
+### 方式二：通过自定义 Tap 安装
+
+```bash
+git clone https://github.com/robinspt/hermes-skills.git
+cd hermes-skills
+hermes skills tap add robinspt/hermes-skills
+hermes skills inspect robinspt/hermes-skills/jin10
+hermes skills install robinspt/hermes-skills/jin10
+hermes skills list
+```
 
 如果你要在 Discord 等消息平台使用，安装或更新后建议重启 gateway：
 

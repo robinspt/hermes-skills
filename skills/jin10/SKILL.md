@@ -13,7 +13,9 @@ metadata:
 
 # Jin10 Skill
 
-> 致谢：感谢金十数据提供 MCP 服务。本 skill 仅进行使用方式转换，无意替代或模仿金十数据官方服务。
+> 致谢：感谢金十数据提供 MCP 服务。本 skill 仅进行使用方式转换，无意替代或模仿[金十数据官方服务](https://mcp.jin10.com/app)。
+>
+> 获取地址：`https://mcp.jin10.com/app`
 
 Use this skill to access Jin10 market data through the bundled Python CLI.
 

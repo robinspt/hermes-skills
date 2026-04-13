@@ -6,7 +6,9 @@ English | [中文](#hermes-skills-仓库说明)
 
 This repository contains custom skills for Hermes Agent.
 
-> Acknowledgment: Thanks to Jin10 for providing the MCP service. This skill only adapts the usage format and does not intend to replace or imitate Jin10's official service.
+> Acknowledgment: Thanks to Jin10 for providing the MCP service. This skill only adapts the usage format and does not intend to replace or imitate the [official Jin10 service](https://mcp.jin10.com/app).
+>
+> Token and service page: `https://mcp.jin10.com/app`
 
 Current published skill:
 
@@ -40,6 +42,8 @@ skills/jin10
 ### Option 1: Copy into `~/.hermes/skills/`
 
 ```bash
+git clone https://github.com/robinspt/hermes-skills.git
+cd hermes-skills
 mkdir -p ~/.hermes/skills
 cp -r skills/jin10 ~/.hermes/skills/
 mkdir -p ~/.config/jin10
@@ -61,15 +65,12 @@ hermes gateway restart
 ### Option 2: Add This Repository as a Custom Tap
 
 ```bash
+git clone https://github.com/robinspt/hermes-skills.git
+cd hermes-skills
 hermes skills tap add robinspt/hermes-skills
 hermes skills inspect robinspt/hermes-skills/jin10
 hermes skills install robinspt/hermes-skills/jin10
-```
-
-If you want to verify discoverability after adding the tap, you can still run:
-
-```bash
-hermes skills search jin10
+hermes skills list
 ```
 
 ## Usage
@@ -118,7 +119,9 @@ to confirm that Hermes has loaded the skill on the messaging side. If needed, ch
 
 这个仓库用于存放 Hermes Agent 的自定义 skills。
 
-> 致谢：感谢金十数据提供 MCP 服务。本 skill 仅进行使用方式转换，无意替代或模仿金十数据官方服务。
+> 致谢：感谢金十数据提供 MCP 服务。本 skill 仅进行使用方式转换，无意替代或模仿[金十数据官方服务](https://mcp.jin10.com/app)。
+>
+> 获取地址：`https://mcp.jin10.com/app`
 
 当前主要 skill：
 
@@ -152,6 +155,8 @@ skills/jin10
 ### 方式一：复制到 `~/.hermes/skills/`
 
 ```bash
+git clone https://github.com/robinspt/hermes-skills.git
+cd hermes-skills
 mkdir -p ~/.hermes/skills
 cp -r skills/jin10 ~/.hermes/skills/
 mkdir -p ~/.config/jin10
@@ -173,15 +178,12 @@ hermes gateway restart
 ### 方式二：把仓库添加为自定义 Tap
 
 ```bash
+git clone https://github.com/robinspt/hermes-skills.git
+cd hermes-skills
 hermes skills tap add robinspt/hermes-skills
 hermes skills inspect robinspt/hermes-skills/jin10
 hermes skills install robinspt/hermes-skills/jin10
-```
-
-如果你只是想确认仓库已被索引，也可以额外执行：
-
-```bash
-hermes skills search jin10
+hermes skills list
 ```
 
 ## 使用方式
