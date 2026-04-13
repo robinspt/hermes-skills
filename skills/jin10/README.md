@@ -29,7 +29,7 @@ From the repository root, copy this skill into your Hermes skills directory:
 
 ```bash
 mkdir -p ~/.hermes/skills/finance
-cp -r skills/finance/jin10 ~/.hermes/skills/finance/
+cp -r skills/jin10 ~/.hermes/skills/finance/
 mkdir -p ~/.config/jin10
 chmod 700 ~/.config/jin10
 nano ~/.config/jin10/api_token
@@ -157,7 +157,7 @@ jin10/
 
 ```bash
 mkdir -p ~/.hermes/skills/finance
-cp -r skills/finance/jin10 ~/.hermes/skills/finance/
+cp -r skills/jin10 ~/.hermes/skills/finance/
 mkdir -p ~/.config/jin10
 chmod 700 ~/.config/jin10
 nano ~/.config/jin10/api_token
