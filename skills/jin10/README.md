@@ -98,7 +98,7 @@ If Discord autocomplete does not show `/jin10`, that does not necessarily mean t
 /commands
 ```
 
-to confirm that Hermes has loaded the skill on the messaging side. If needed, check additional pages with `/commands 2`, `/commands 3`, and so on. Then type `/jin10 ...` manually. Dynamic local skills may not always appear immediately in Discord's native slash-command autocomplete, even when they are available and working.
+to confirm that Hermes has loaded the skill on the messaging side. If needed, check additional pages with `/commands 2`, `/commands 3`, and so on. Then type `/jin10 ...` manually. Dynamic local skills may not always appear immediately in Discord's native slash-command autocomplete, even when they are available and working. This can also happen because Discord's native slash command registration is limited to 100 commands.
 
 ## What the Skill Runs
 
@@ -246,7 +246,7 @@ hermes chat --toolsets skills,terminal -q "/jin10 看看最新的金价"
 /commands
 ```
 
-用来确认 Hermes 是否已经在消息平台侧识别到这个 skill。必要时继续翻页查看，比如 `/commands 2`、`/commands 3`。确认存在后，再手动输入 `/jin10 ...` 即可。动态本地 skill 在 Discord 原生命令自动补全中不一定会立即显示，但通常仍然可以正常使用。
+用来确认 Hermes 是否已经在消息平台侧识别到这个 skill。必要时继续翻页查看，比如 `/commands 2`、`/commands 3`。确认存在后，再手动输入 `/jin10 ...` 即可。动态本地 skill 在 Discord 原生命令自动补全中不一定会立即显示，但通常仍然可以正常使用；这也可能是因为 Discord 原生 slash command 注册数量上限为 100。
 
 ## Skill 实际执行的命令
 

@@ -98,7 +98,7 @@ If Discord does not autocomplete `/jin10`, that does not necessarily mean the sk
 /commands
 ```
 
-to confirm that Hermes has loaded the skill on the messaging side. If needed, check additional pages with `/commands 2`, `/commands 3`, and so on. Then type `/jin10 ...` manually.
+to confirm that Hermes has loaded the skill on the messaging side. If needed, check additional pages with `/commands 2`, `/commands 3`, and so on. Then type `/jin10 ...` manually. This can happen because Discord's native slash command registration is limited to 100 commands.
 
 ## Custom Repository Notes
 
@@ -216,7 +216,7 @@ hermes chat --toolsets skills,terminal -q "/jin10 看看最新的金价"
 /commands
 ```
 
-用来确认 Hermes 是否已经在消息平台侧识别到这个 skill。必要时继续翻页查看，比如 `/commands 2`、`/commands 3`。确认存在后，再手动输入 `/jin10 ...`。
+用来确认 Hermes 是否已经在消息平台侧识别到这个 skill。必要时继续翻页查看，比如 `/commands 2`、`/commands 3`。确认存在后，再手动输入 `/jin10 ...`。出现这种情况，可能是因为 Discord 原生 slash command 注册数量上限为 100。
 
 ## 自定义仓库说明
 
