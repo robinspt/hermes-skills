@@ -34,9 +34,11 @@ mkdir -p ~/.hermes/skills/finance
 cp -r finance/jin10 ~/.hermes/skills/finance/
 mkdir -p ~/.config/jin10
 chmod 700 ~/.config/jin10
+nano ~/.config/jin10/api_token
+chmod 600 ~/.config/jin10/api_token
 ```
 
-Then save your Jin10 token as the only content of `~/.config/jin10/api_token`, and set restrictive permissions such as `chmod 600 ~/.config/jin10/api_token`.
+Paste your Jin10 token into that file as the only content, save, and exit `nano`.
 
 If you use Hermes messaging platforms such as Discord, restart the gateway after installing or updating the skill:
 
@@ -160,9 +162,11 @@ mkdir -p ~/.hermes/skills/finance
 cp -r finance/jin10 ~/.hermes/skills/finance/
 mkdir -p ~/.config/jin10
 chmod 700 ~/.config/jin10
+nano ~/.config/jin10/api_token
+chmod 600 ~/.config/jin10/api_token
 ```
 
-然后把 Jin10 token 作为文件唯一内容保存到 `~/.config/jin10/api_token`，并设置较严格的权限，例如 `chmod 600 ~/.config/jin10/api_token`。
+把 Jin10 token 粘贴到这个文件里，确保文件中只有 token 本身，保存并退出 `nano`。
 
 如果你要在 Discord 等消息平台使用，安装或更新后建议重启 gateway：
 
