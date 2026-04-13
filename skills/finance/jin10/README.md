@@ -23,8 +23,6 @@ This is a packaging and usage adaptation for Hermes Agent. It is not an official
 - `python3`
 - a local Jin10 token file at `~/.config/jin10/api_token`
 
-Get your token from: `https://mcp.jin10.com/app`
-
 ## Installation
 
 From the repository root, copy this skill into your Hermes skills directory:
@@ -39,6 +37,8 @@ chmod 600 ~/.config/jin10/api_token
 ```
 
 Paste your Jin10 token into that file as the only content, save, and exit `nano`.
+
+Get your Jin10 token from: `https://mcp.jin10.com/app`
 
 If you use Hermes messaging platforms such as Discord, restart the gateway after installing or updating the skill:
 
@@ -151,8 +151,6 @@ jin10/
 - `python3`
 - 本地 Jin10 token 文件：`~/.config/jin10/api_token`
 
-Token 获取地址：`https://mcp.jin10.com/app`
-
 ## 安装方法
 
 在仓库根目录执行下面的命令，把这个 skill 复制到 Hermes 的 skills 目录：
@@ -167,6 +165,8 @@ chmod 600 ~/.config/jin10/api_token
 ```
 
 把 Jin10 token 粘贴到这个文件里，确保文件中只有 token 本身，保存并退出 `nano`。
+
+Jin10 token 获取地址：`https://mcp.jin10.com/app`
 
 如果你要在 Discord 等消息平台使用，安装或更新后建议重启 gateway：
 

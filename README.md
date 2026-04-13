@@ -6,6 +6,8 @@ English | [中文](#hermes-skills-仓库说明)
 
 This repository contains custom skills for Hermes Agent.
 
+> Acknowledgment: Thanks to Jin10 for providing the MCP service. This skill only adapts the usage format and does not intend to replace or imitate Jin10's official service.
+
 Current published skill:
 
 - `skills/finance/jin10` — Jin10 market quotes, flash headlines, news lookup, and economic calendar access through a bundled Python CLI wrapper.
@@ -48,6 +50,8 @@ chmod 600 ~/.config/jin10/api_token
 ```
 
 Paste your Jin10 token into that file as the only content, save, and exit `nano`.
+
+Get your Jin10 token from: `https://mcp.jin10.com/app`
 
 Then start a new Hermes session, or restart the gateway if you use Discord/Telegram:
 
@@ -110,6 +114,8 @@ to confirm that Hermes has loaded the skill on the messaging side. If needed, ch
 
 这个仓库用于存放 Hermes Agent 的自定义 skills。
 
+> 致谢：感谢金十数据提供 MCP 服务。本 skill 仅进行使用方式转换，无意替代或模仿金十数据官方服务。
+
 当前主要 skill：
 
 - `skills/finance/jin10`：通过随包分发的 Python CLI，提供金十行情报价、财经快讯、资讯搜索与财经日历查询能力。
@@ -152,6 +158,8 @@ chmod 600 ~/.config/jin10/api_token
 ```
 
 把 Jin10 token 粘贴到这个文件里，确保文件中只有 token 本身，保存并退出 `nano`。
+
+Jin10 token 获取地址：`https://mcp.jin10.com/app`
 
 如果你使用 Discord、Telegram 等消息平台，安装或更新后建议执行：
 
