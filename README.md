@@ -8,7 +8,7 @@ This repository contains custom skills for Hermes Agent.
 
 Current published skill:
 
-- `hermes/finance/jin10` — Jin10 market quotes, flash headlines, news lookup, and economic calendar access through a bundled Python CLI wrapper.
+- `finance/jin10` — Jin10 market quotes, flash headlines, news lookup, and economic calendar access through a bundled Python CLI wrapper.
 
 The `jin10` skill is designed for both CLI and messaging-platform use in Hermes, including Discord.
 
@@ -16,24 +16,21 @@ The `jin10` skill is designed for both CLI and messaging-platform use in Hermes,
 
 ```text
 .
-├── hermes/
-│   └── finance/
-│       └── jin10/
-│           ├── SKILL.md
-│           ├── README.md
-│           ├── jin10/
-│           ├── references/
-│           └── scripts/
-├── SKILL.md                    # Earlier source skill definition kept for reference
-├── jin10/                      # Source Python package from the original adaptation
-├── references/
-└── scripts/
+├── finance/
+│   └── jin10/
+│       ├── SKILL.md
+│       ├── README.md
+│       ├── jin10/
+│       ├── references/
+│       └── scripts/
+├── README.md
+└── .gitignore
 ```
 
 The Hermes-ready distributable skill lives under:
 
 ```text
-hermes/finance/jin10
+finance/jin10
 ```
 
 ## Install This Skill
@@ -42,7 +39,7 @@ hermes/finance/jin10
 
 ```bash
 mkdir -p ~/.hermes/skills/finance
-cp -r hermes/finance/jin10 ~/.hermes/skills/finance/
+cp -r finance/jin10 ~/.hermes/skills/finance/
 printf 'JIN10_API_TOKEN=sk-xxxx\n' >> ~/.hermes/.env
 ```
 
@@ -57,7 +54,7 @@ hermes gateway restart
 Once this repository is pushed, Hermes users can install directly from GitHub:
 
 ```bash
-hermes skills install robinspt/hermes-skills/hermes/finance/jin10
+hermes skills install robinspt/hermes-skills/finance/jin10
 ```
 
 ## Usage
@@ -84,7 +81,7 @@ to confirm that Hermes has loaded the skill on the messaging side. If needed, ch
 
 ## Publishing Notes
 
-- Hermes skill document: `hermes/finance/jin10/SKILL.md`
+- Hermes skill document: `finance/jin10/SKILL.md`
 - Skill name: `jin10`
 - Category: `finance`
 - Required environment variable: `JIN10_API_TOKEN`
@@ -93,7 +90,7 @@ to confirm that Hermes has loaded the skill on the messaging side. If needed, ch
 To publish with Hermes CLI from a machine that has Hermes installed:
 
 ```bash
-hermes skills publish hermes/finance/jin10 --to github --repo robinspt/hermes-skills
+hermes skills publish finance/jin10 --to github --repo robinspt/hermes-skills
 ```
 
 ## References
@@ -114,7 +111,7 @@ hermes skills publish hermes/finance/jin10 --to github --repo robinspt/hermes-sk
 
 当前主要 skill：
 
-- `hermes/finance/jin10`：通过随包分发的 Python CLI，提供金十行情报价、财经快讯、资讯搜索与财经日历查询能力。
+- `finance/jin10`：通过随包分发的 Python CLI，提供金十行情报价、财经快讯、资讯搜索与财经日历查询能力。
 
 `jin10` skill 可用于 Hermes CLI，也可用于 Discord 等消息平台。
 
@@ -122,24 +119,21 @@ hermes skills publish hermes/finance/jin10 --to github --repo robinspt/hermes-sk
 
 ```text
 .
-├── hermes/
-│   └── finance/
-│       └── jin10/
-│           ├── SKILL.md
-│           ├── README.md
-│           ├── jin10/
-│           ├── references/
-│           └── scripts/
-├── SKILL.md                    # 较早的源 skill 定义，保留作参考
-├── jin10/                      # 原始适配中的 Python 包
-├── references/
-└── scripts/
+├── finance/
+│   └── jin10/
+│       ├── SKILL.md
+│       ├── README.md
+│       ├── jin10/
+│       ├── references/
+│       └── scripts/
+├── README.md
+└── .gitignore
 ```
 
 真正用于 Hermes 分发和安装的目录是：
 
 ```text
-hermes/finance/jin10
+finance/jin10
 ```
 
 ## 安装方法
@@ -148,7 +142,7 @@ hermes/finance/jin10
 
 ```bash
 mkdir -p ~/.hermes/skills/finance
-cp -r hermes/finance/jin10 ~/.hermes/skills/finance/
+cp -r finance/jin10 ~/.hermes/skills/finance/
 printf 'JIN10_API_TOKEN=sk-xxxx\n' >> ~/.hermes/.env
 ```
 
@@ -163,7 +157,7 @@ hermes gateway restart
 仓库推送完成后，Hermes 用户可以直接从 GitHub 安装：
 
 ```bash
-hermes skills install robinspt/hermes-skills/hermes/finance/jin10
+hermes skills install robinspt/hermes-skills/finance/jin10
 ```
 
 ## 使用方式
@@ -190,7 +184,7 @@ hermes chat --toolsets skills,terminal -q "/jin10 看看最新的金价"
 
 ## 发布说明
 
-- Hermes skill 文档：`hermes/finance/jin10/SKILL.md`
+- Hermes skill 文档：`finance/jin10/SKILL.md`
 - skill 名称：`jin10`
 - 分类：`finance`
 - 必需环境变量：`JIN10_API_TOKEN`
@@ -199,7 +193,7 @@ hermes chat --toolsets skills,terminal -q "/jin10 看看最新的金价"
 在已安装 Hermes CLI 的机器上，可以用下面的命令发布：
 
 ```bash
-hermes skills publish hermes/finance/jin10 --to github --repo robinspt/hermes-skills
+hermes skills publish finance/jin10 --to github --repo robinspt/hermes-skills
 ```
 
 ## 参考文档

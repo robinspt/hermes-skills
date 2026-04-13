@@ -27,11 +27,11 @@ Get your token from: `https://mcp.jin10.com/app`
 
 ## Installation
 
-Copy this directory to your Hermes skills directory:
+From the repository root, copy this skill into your Hermes skills directory:
 
 ```bash
 mkdir -p ~/.hermes/skills/finance
-cp -r ./jin10 ~/.hermes/skills/finance/
+cp -r finance/jin10 ~/.hermes/skills/finance/
 printf 'JIN10_API_TOKEN=sk-xxxx\n' >> ~/.hermes/.env
 ```
 
@@ -150,11 +150,11 @@ Token 获取地址：`https://mcp.jin10.com/app`
 
 ## 安装方法
 
-把当前目录复制到 Hermes 的 skills 目录：
+在仓库根目录执行下面的命令，把这个 skill 复制到 Hermes 的 skills 目录：
 
 ```bash
 mkdir -p ~/.hermes/skills/finance
-cp -r ./jin10 ~/.hermes/skills/finance/
+cp -r finance/jin10 ~/.hermes/skills/finance/
 printf 'JIN10_API_TOKEN=sk-xxxx\n' >> ~/.hermes/.env
 ```
 
