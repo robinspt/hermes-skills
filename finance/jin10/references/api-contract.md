@@ -2,7 +2,7 @@
 
 This Hermes skill uses the Jin10 MCP endpoint internally: `https://mcp.jin10.com/mcp`.
 
-Do not send raw MCP protocol messages from the conversation. Use the bundled script at `~/.hermes/skills/finance/jin10/scripts/jin10.py`.
+Use the bundled script at `~/.hermes/skills/finance/jin10/scripts/jin10.py`.
 
 If the skill is loaded from `skills.external_dirs`, substitute the actual skill root but keep the same relative layout.
 

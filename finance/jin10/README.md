@@ -21,7 +21,7 @@ This is a packaging and usage adaptation for Hermes Agent. It is not an official
 
 - Hermes Agent
 - `python3`
-- `JIN10_API_TOKEN`
+- a local Jin10 token file at `~/.config/jin10/api_token`
 
 Get your token from: `https://mcp.jin10.com/app`
 
@@ -32,8 +32,11 @@ From the repository root, copy this skill into your Hermes skills directory:
 ```bash
 mkdir -p ~/.hermes/skills/finance
 cp -r finance/jin10 ~/.hermes/skills/finance/
-printf 'JIN10_API_TOKEN=sk-xxxx\n' >> ~/.hermes/.env
+mkdir -p ~/.config/jin10
+chmod 700 ~/.config/jin10
 ```
+
+Then save your Jin10 token as the only content of `~/.config/jin10/api_token`, and set restrictive permissions such as `chmod 600 ~/.config/jin10/api_token`.
 
 If you use Hermes messaging platforms such as Discord, restart the gateway after installing or updating the skill:
 
@@ -100,7 +103,7 @@ Supported commands:
 
 - The skill depends on Hermes `skills` and `terminal` toolsets.
 - For messaging platforms, installation changes are safest after `hermes gateway restart`.
-- If `JIN10_API_TOKEN` is missing, the script will fail fast with a clear error.
+- If `~/.config/jin10/api_token` is missing or empty, the script will fail fast with a clear error.
 - The skill returns Jin10 data, not exchange-direct market data.
 
 ## Directory Layout
@@ -144,7 +147,7 @@ jin10/
 
 - Hermes Agent
 - `python3`
-- `JIN10_API_TOKEN`
+- 本地 Jin10 token 文件：`~/.config/jin10/api_token`
 
 Token 获取地址：`https://mcp.jin10.com/app`
 
@@ -155,8 +158,11 @@ Token 获取地址：`https://mcp.jin10.com/app`
 ```bash
 mkdir -p ~/.hermes/skills/finance
 cp -r finance/jin10 ~/.hermes/skills/finance/
-printf 'JIN10_API_TOKEN=sk-xxxx\n' >> ~/.hermes/.env
+mkdir -p ~/.config/jin10
+chmod 700 ~/.config/jin10
 ```
+
+然后把 Jin10 token 作为文件唯一内容保存到 `~/.config/jin10/api_token`，并设置较严格的权限，例如 `chmod 600 ~/.config/jin10/api_token`。
 
 如果你要在 Discord 等消息平台使用，安装或更新后建议重启 gateway：
 
@@ -223,7 +229,7 @@ python3 ~/.hermes/skills/finance/jin10/scripts/jin10.py --format json ...
 
 - 该 skill 依赖 Hermes 的 `skills` 与 `terminal` toolsets。
 - 在消息平台中使用时，安装或更新后最好执行一次 `hermes gateway restart`。
-- 如果缺少 `JIN10_API_TOKEN`，脚本会直接报错并提示。
+- 如果 `~/.config/jin10/api_token` 不存在或为空，脚本会直接报错并提示。
 - 该 skill 返回的是 Jin10 数据，不是交易所直连行情。
 
 ## 目录结构

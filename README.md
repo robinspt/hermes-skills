@@ -40,8 +40,11 @@ finance/jin10
 ```bash
 mkdir -p ~/.hermes/skills/finance
 cp -r finance/jin10 ~/.hermes/skills/finance/
-printf 'JIN10_API_TOKEN=sk-xxxx\n' >> ~/.hermes/.env
+mkdir -p ~/.config/jin10
+chmod 700 ~/.config/jin10
 ```
+
+Then save your Jin10 token as the only content of `~/.config/jin10/api_token`, and set restrictive permissions such as `chmod 600 ~/.config/jin10/api_token`.
 
 Then start a new Hermes session, or restart the gateway if you use Discord/Telegram:
 
@@ -84,7 +87,7 @@ to confirm that Hermes has loaded the skill on the messaging side. If needed, ch
 - Hermes skill document: `finance/jin10/SKILL.md`
 - Skill name: `jin10`
 - Category: `finance`
-- Required environment variable: `JIN10_API_TOKEN`
+- Local token file: `~/.config/jin10/api_token`
 - Required Hermes toolsets: `skills`, `terminal`
 
 To publish with Hermes CLI from a machine that has Hermes installed:
@@ -143,8 +146,11 @@ finance/jin10
 ```bash
 mkdir -p ~/.hermes/skills/finance
 cp -r finance/jin10 ~/.hermes/skills/finance/
-printf 'JIN10_API_TOKEN=sk-xxxx\n' >> ~/.hermes/.env
+mkdir -p ~/.config/jin10
+chmod 700 ~/.config/jin10
 ```
+
+然后把 Jin10 token 作为文件唯一内容保存到 `~/.config/jin10/api_token`，并设置较严格的权限，例如 `chmod 600 ~/.config/jin10/api_token`。
 
 如果你使用 Discord、Telegram 等消息平台，安装或更新后建议执行：
 
@@ -187,7 +193,7 @@ hermes chat --toolsets skills,terminal -q "/jin10 看看最新的金价"
 - Hermes skill 文档：`finance/jin10/SKILL.md`
 - skill 名称：`jin10`
 - 分类：`finance`
-- 必需环境变量：`JIN10_API_TOKEN`
+- 本地 token 文件：`~/.config/jin10/api_token`
 - 依赖的 Hermes toolsets：`skills`、`terminal`
 
 在已安装 Hermes CLI 的机器上，可以用下面的命令发布：

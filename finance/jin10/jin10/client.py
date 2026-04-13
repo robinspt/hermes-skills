@@ -5,7 +5,7 @@
 from __future__ import annotations
 
 import json
-import os
+import pathlib
 import urllib.error
 import urllib.request
 from dataclasses import dataclass
@@ -14,6 +14,7 @@ from typing import Any, Optional
 DEFAULT_BASE_URL = 'https://mcp.jin10.com/mcp'
 DEFAULT_PROTOCOL_VERSION = '2025-11-25'
 DEFAULT_TIMEOUT = 30
+DEFAULT_TOKEN_PATH = pathlib.Path.home() / '.config' / 'jin10' / 'api_token'
 
 
 class Jin10Error(Exception):
@@ -39,6 +40,13 @@ class ClientState:
 class BaseClient:
     """MCP 协议处理基础类。"""
 
+    @staticmethod
+    def _load_api_token() -> str:
+        try:
+            return DEFAULT_TOKEN_PATH.read_text(encoding='utf-8').strip()
+        except FileNotFoundError:
+            return ''
+
     def __init__(
         self,
         base_url: str = DEFAULT_BASE_URL,
@@ -48,7 +56,7 @@ class BaseClient:
         if state is None:
             state = ClientState(
                 base_url=base_url,
-                api_token=os.environ.get('JIN10_API_TOKEN', '') if api_token is None else api_token,
+                api_token=self._load_api_token() if api_token is None else api_token,
             )
         elif api_token is not None:
             state.api_token = api_token
@@ -98,7 +106,9 @@ class BaseClient:
     def _require_api_token(self) -> None:
         if self.api_token:
             return
-        raise Jin10Error('Missing API token. Set JIN10_API_TOKEN before calling Jin10.')
+        raise Jin10Error(
+            f'Missing Jin10 token. Save it to {DEFAULT_TOKEN_PATH} before calling Jin10.'
+        )
 
     def _next_request_id(self) -> int:
         request_id = self.request_id

@@ -9,20 +9,17 @@ metadata:
     tags: [finance, markets, news, calendar, china]
     category: finance
     requires_toolsets: [terminal]
-required_environment_variables:
-  - name: JIN10_API_TOKEN
-    prompt: Jin10 API token
-    help: Get one at https://mcp.jin10.com/app
-    required_for: Access to the Jin10 MCP endpoint
 ---
 
 # Jin10 Skill
 
 > 致谢：感谢金十数据提供 MCP 服务。本 skill 仅进行使用方式转换，无意替代或模仿金十数据官方服务。
 
-Use this skill to access Jin10 market data through the bundled Python CLI. It wraps the Jin10 MCP endpoint behind stable shell commands, so do not write raw MCP `initialize`, `tools/call`, `resources/read`, or session-header logic in chat.
+Use this skill to access Jin10 market data through the bundled Python CLI.
 
 Assume the skill is installed at `~/.hermes/skills/finance/jin10`. If the user installs it through `skills.external_dirs`, keep the same relative layout and substitute the actual root path.
+
+Before use, make sure a local Jin10 token file exists at `~/.config/jin10/api_token`. The file should contain only the token string.
 
 ## When to Use
 
@@ -57,9 +54,8 @@ Read [references/api-contract.md](references/api-contract.md) when you need the 
 
 ## Pitfalls
 
-- 不要在对话里手写 MCP 协议消息。统一调用脚本。
-- 不要假设 Hermes 会把 `~/.hermes/.env` 内容暴露给模型；应依赖 `required_environment_variables` 和终端环境透传。
-- 如果 `JIN10_API_TOKEN` 缺失，命令会直接失败。Hermes 在本地 CLI 加载 skill 时可以安全提示用户补齐。
+- 统一调用脚本，不要绕过 `scripts/jin10.py`。
+- 如果 `~/.config/jin10/api_token` 不存在或为空，命令会直接失败。
 - `flash search` 用于关键词过滤；需要翻页时应使用 `flash list --cursor ...`。
 - `news get` 必须先拿到有效的文章 `id`。
 - 如果用户问的是交易所原生价格或特定券商盘口，需要说明这里返回的是 Jin10 数据，不是交易所直连行情。
