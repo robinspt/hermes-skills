@@ -23,7 +23,6 @@ The `jin10` skill is designed for both CLI and messaging-platform use in Hermes,
 ├── skills/
 │   └── jin10/
 │       ├── SKILL.md
-│       ├── README.md
 │       ├── jin10/
 │       ├── references/
 │       └── scripts/
@@ -141,7 +140,6 @@ to confirm that Hermes has loaded the skill on the messaging side. If needed, ch
 ├── skills/
 │   └── jin10/
 │       ├── SKILL.md
-│       ├── README.md
 │       ├── jin10/
 │       ├── references/
 │       └── scripts/
