@@ -16,6 +16,17 @@ Current published skill:
 
 The `jin10` skill is designed for both CLI and messaging-platform use in Hermes, including Discord.
 
+## What It Can Do
+
+Based on the official Jin10 MCP service, this skill currently supports:
+
+- symbol discovery through the supported quote code list
+- real-time quotes for supported instruments such as gold, silver, crude oil, FX, and offshore RMB pairs
+- K-line / candle queries by symbol, timeframe, and count
+- latest flash headline browsing and keyword search, with cursor-based pagination
+- latest news browsing, keyword search, and full article detail lookup
+- economic calendar queries for major macro events and data releases
+
 ## Repository Layout
 
 ```text
@@ -132,6 +143,17 @@ to confirm that Hermes has loaded the skill on the messaging side. If needed, ch
 - `skills/jin10`：通过随包分发的 Python CLI，提供金十行情报价、K 线、财经快讯、资讯搜索与财经日历查询能力。
 
 `jin10` skill 可用于 Hermes CLI，也可用于 Discord 等消息平台。
+
+## 能力概览
+
+这个 skill 基于金十数据官方 MCP 服务改造，目前支持：
+
+- 读取支持的报价品种代码列表
+- 查询黄金、白银、原油、外汇、离岸人民币等品种的实时行情
+- 按品种、周期、数量查询 K 线数据
+- 浏览最新财经快讯，并按关键词搜索快讯，支持基于 `cursor` 翻页
+- 浏览最新资讯、按关键词搜索资讯，并读取单篇文章详情
+- 查询财经日历，包括重要宏观事件和经济数据发布时间
 
 ## 仓库结构
 
