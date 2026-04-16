@@ -12,7 +12,7 @@ This repository contains custom skills for Hermes Agent.
 
 Current published skill:
 
-- `skills/jin10` — Jin10 market quotes, flash headlines, news lookup, and economic calendar access through a bundled Python CLI wrapper.
+- `skills/jin10` — Jin10 market quotes, K-line data, flash headlines, news lookup, and economic calendar access through a bundled Python CLI wrapper.
 
 The `jin10` skill is designed for both CLI and messaging-platform use in Hermes, including Discord.
 
@@ -129,7 +129,7 @@ to confirm that Hermes has loaded the skill on the messaging side. If needed, ch
 
 当前主要 skill：
 
-- `skills/jin10`：通过随包分发的 Python CLI，提供金十行情报价、财经快讯、资讯搜索与财经日历查询能力。
+- `skills/jin10`：通过随包分发的 Python CLI，提供金十行情报价、K 线、财经快讯、资讯搜索与财经日历查询能力。
 
 `jin10` skill 可用于 Hermes CLI，也可用于 Discord 等消息平台。
 

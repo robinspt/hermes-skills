@@ -1,6 +1,6 @@
 ---
 name: jin10
-description: Query Jin10 quotes, flash headlines, news, and economic calendar data. 适用于黄金/白银/原油/外汇报价、财经快讯、资讯详情、财经日历、非农和央行事件等请求。
+description: Query Jin10 quotes, K-line candles, flash headlines, news, and economic calendar data. 适用于黄金/白银/原油/外汇报价、K线、财经快讯、资讯详情、财经日历、非农和央行事件等请求。
 version: 1.0.0
 author: Jin10 Skill Maintainers
 platforms: [macos, linux]
@@ -25,7 +25,7 @@ Before use, make sure a local Jin10 token file exists at `~/.config/jin10/api_to
 
 ## When to Use
 
-- 用户问黄金、白银、原油、外汇等品种的最新报价或代码。
+- 用户问黄金、白银、原油、外汇等品种的最新报价、代码或最近 K 线。
 - 用户问某个主题的最新财经快讯，例如美联储、非农、原油、关税。
 - 用户问某个主题的资讯列表，或要求打开某篇 Jin10 资讯详情。
 - 用户问财经日历、本周重点数据、高重要性事件、非农、CPI、央行决议。
@@ -36,6 +36,7 @@ Before use, make sure a local Jin10 token file exists at `~/.config/jin10/api_to
 ```bash
 python3 ~/.hermes/skills/jin10/scripts/jin10.py --format json codes
 python3 ~/.hermes/skills/jin10/scripts/jin10.py --format json quote XAUUSD
+python3 ~/.hermes/skills/jin10/scripts/jin10.py --format json kline XAUUSD --time 1h --count 20
 python3 ~/.hermes/skills/jin10/scripts/jin10.py --format json flash search "美联储"
 python3 ~/.hermes/skills/jin10/scripts/jin10.py --format json news search "原油"
 python3 ~/.hermes/skills/jin10/scripts/jin10.py --format json news get 123456
@@ -46,9 +47,9 @@ Read [references/api-contract.md](references/api-contract.md) when you need the 
 
 ## Procedure
 
-1. 先判断请求属于 `quote`、`flash`、`news` 还是 `calendar`。
+1. 先判断请求属于 `quote`、`kline`、`flash`、`news` 还是 `calendar`。
 2. 默认使用 `--format json`，只有在用户明确需要可读块状文本时才切到 `--format text`。
-3. 查询报价时，如果代码不明确，先跑 `codes`，再跑 `quote <CODE>`。
+3. 查询报价或 K 线时，如果代码不明确，先跑 `codes`，再跑 `quote <CODE>` 或 `kline <CODE> [--time ...] [--count ...]`。
 4. 查询主题快讯时，优先用 `flash search <关键词>`；只有顺序浏览最新流时才用 `flash list` 和 `--cursor`。
 5. 查询资讯时，先用 `news search <关键词>` 或 `news list` 找到条目，再用 `news get <id>` 取详情。
 6. 查询财经日历时，默认用 `calendar`；按主题筛选时用 `--keyword`；只要重磅事件时用 `--high-importance`。
@@ -58,6 +59,7 @@ Read [references/api-contract.md](references/api-contract.md) when you need the 
 
 - 统一调用脚本，不要绕过 `scripts/jin10.py`。
 - 如果 `~/.config/jin10/api_token` 不存在或为空，命令会直接失败。
+- `kline` 只传 `code`、`time`、`count` 三个已声明参数；不要传 `offset` 等未声明字段。
 - `flash search` 用于关键词过滤；需要翻页时应使用 `flash list --cursor ...`。
 - `news get` 必须先拿到有效的文章 `id`。
 - 如果用户问的是交易所原生价格或特定券商盘口，需要说明这里返回的是 Jin10 数据，不是交易所直连行情。
@@ -67,8 +69,9 @@ Read [references/api-contract.md](references/api-contract.md) when you need the 
 - 命令退出码应为 `0`。
 - JSON 输出结构应符合预期：
   - `quote`: `data.code`、`data.name`、`data.time`
+  - `kline`: `data.code`、`data.name`、`data.klines[]`
   - `flash` / `news` 列表：`data.items`
   - `news get`: `data.id`、`data.title`、`data.content`
   - `calendar`: `data`
-- 报价请求要确认返回的 `code` 与目标品种一致。
+- 报价和 K 线请求要确认返回的 `code` 与目标品种一致。
 - 列表请求在宣称“没有更多结果”之前，要检查 `has_more` 和 `next_cursor`。
